@@ -1,0 +1,5 @@
+Flask==3.0.0
+Flask-CORS==4.0.0
+ibmcloudant==0.9.1
+ibm-watson-machine-learning==1.0.354
+python-dotenv==1.0.0

@@ -1,0 +1,102 @@
+/* SmartLogi AI Global Styles */
+:root {
+    --primary: #0f62fe;
+    --primary-hover: #0353e9;
+    --dark: #161616;
+    --dark-surface: #262626;
+    --light-bg: #f4f4f4;
+    --sidebar-width: 250px;
+}
+
+body {
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    background-color: var(--light-bg);
+    color: #393939;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--dark);
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    color: white;
+}
+
+.sidebar .brand {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #393939;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-link {
+    color: #c6c6c6;
+    padding: 12px 20px;
+    border-left: 4px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+    background: #393939;
+    border-left-color: var(--primary);
+}
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 30px;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.card-header {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: 600;
+    padding: 15px 20px;
+}
+
+.stat-card .h2 {
+    font-weight: 700;
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.badge.bg-high {
+    background-color: #da1e28;
+    color: white;
+}
+
+.badge.bg-medium {
+    background-color: #f1c21b;
+    color: black;
+}
+
+.badge.bg-low {
+    background-color: #198038;
+    color: white;
+}
+
+.ai-brand {
+    color: #8a3ffc;
+    font-weight: bold;
+}

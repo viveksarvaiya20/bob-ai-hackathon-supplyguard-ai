@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard - SmartLogi AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script></head>
+<body>
+    <nav class="sidebar">
+        <a href="dashboard.html" class="brand">SmartLogi AI</a>
+        <div class="nav flex-column mt-3">
+            <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            <a href="fleet.html" class="nav-link">Fleet</a>
+            <a href="shipments.html" class="nav-link">Shipments</a>
+            <a href="disruptions.html" class="nav-link">Disruptions</a>
+            <a href="optimizer.html" class="nav-link text-info">AI Optimizer</a>
+            <a href="ai-assistant.html" class="nav-link">AI Assistant</a>
+            <a href="analytics.html" class="nav-link">Analytics</a>
+            <a href="about.html" class="nav-link">About</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h2 class="mb-4 fw-bold">Command Center</h2>
+        <div class="row mb-4">
+            <div class="col-md-3"><div class="card p-3 stat-card"><div class="text-muted">Total Vehicles</div><div class="h2" id="dash-vehicles">25</div></div></div>
+            <div class="col-md-3"><div class="card p-3 stat-card"><div class="text-muted">Active Shipments</div><div class="h2">5</div></div></div>
+            <div class="col-md-3"><div class="card p-3 stat-card"><div class="text-muted">High Risk Shipments</div><div class="h2 text-danger">3</div></div></div>
+            <div class="col-md-3"><div class="card p-3 stat-card"><div class="text-muted">Active Disruptions</div><div class="h2 text-warning">3</div></div></div>
+        </div>
+        <div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-white border-0 fw-bold">Live Fleet Tracking Overview</div>
+            <div class="card-body p-0">
+                <div id="map" style="height: 350px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; z-index: 1;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header border-0 bg-white">Fleet Utilization</div>
+                    <div class="card-body"><canvas id="utilChart" height="100"></canvas></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-white border-0"><span class="ai-brand">watsonx</span> AI Insight</div>
+                    <div class="card-body bg-light">
+                        <p class="small">Three shipments are at high risk of delay.</p>
+                        <hr>
+                        <p class="fw-bold mb-1">Recommended action:</p>
+                        <p class="small">Reassign S102 from V001 to V004.</p>
+                        <a href="optimizer.html" class="btn btn-sm btn-primary w-100">View Recommendation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Chart(document.getElementById('utilChart'), {
+            type: 'bar',
+            data: { labels: ['V001','V002','V003','V004','V005'], datasets: [{ label: 'Utilization %', data: [80,30,95,25,105], backgroundColor: '#0f62fe' }] }
+        });
+    </script>
+<script>
+    // Initialize Dashboard Map
+    setTimeout(() => {
+        var map = L.map('map').setView([22.2587, 71.1924], 7); // Center of Gujarat
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: ' IBM Hackathon - SmartLogi AI'
+        }).addTo(map);
+        
+        // Add some mock fleet markers
+        L.marker([23.0225, 72.5714]).addTo(map).bindPopup('<b>V002</b><br>Ahmedabad<br>Available');
+        L.marker([22.3039, 70.8022]).addTo(map).bindPopup('<b>V001</b><br>Rajkot<br>In Transit (S102)');
+        L.marker([21.1702, 72.8311]).addTo(map).bindPopup('<b>V004</b><br>Surat<br>Available');
+        L.marker([22.3072, 73.1812]).addTo(map).bindPopup('<b>V003</b><br>Vadodara<br>Active');
+    }, 500);
+</script>
+</body>
+</html>

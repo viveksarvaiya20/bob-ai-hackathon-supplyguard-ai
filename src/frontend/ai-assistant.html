@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI Assistant - SmartLogi AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="sidebar">
+        <a href="dashboard.html" class="brand">SmartLogi AI</a>
+        <div class="nav flex-column mt-3">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="ai-assistant.html" class="nav-link active">AI Assistant</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h2 class="mb-4 fw-bold">?? Logistics AI Assistant</h2>
+        <div class="card">
+            <div class="card-header bg-dark text-white">watsonx.ai Chat</div>
+            <div class="card-body" style="height: 400px; overflow-y: auto;" id="chatbox">
+                <div class="bg-light p-3 rounded mb-3 w-75">
+                    <strong>AI:</strong> There are 3 high-risk shipments. S102 should be prioritized because it has heavy traffic and a tight delivery deadline.
+                </div>
+            </div>
+            <div class="card-footer d-flex gap-2">
+                <input type="text" class="form-control" id="chatInput" placeholder="Ask your question...">
+                <button class="btn btn-primary" onclick="sendChat()">SEND</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function sendChat() {
+            const el = document.getElementById('chatInput');
+            const box = document.getElementById('chatbox');
+            const text = el.value;
+            if(!text) return;
+            box.innerHTML += <div class="bg-primary text-white p-3 rounded mb-3 w-75 ms-auto"><strong>Manager:</strong> </div>;
+            el.value = '';
+            
+            const res = await fetch('http://localhost:5000/api/ai/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question: text })
+            });
+            const data = await res.json();
+            box.innerHTML += <div class="bg-light p-3 rounded mb-3 w-75"><strong>AI:</strong> </div>;
+            box.scrollTop = box.scrollHeight;
+        }
+    </script>
+</body>
+</html>
