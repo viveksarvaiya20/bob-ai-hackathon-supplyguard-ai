@@ -10,8 +10,8 @@
 |---|---|
 | Team Name | **SmartLogi AI** |
 | Track | **AI** |
-| Team Lead | **vivek sarvaiya ** |
-| Members | **Devanshi Sakariya , Urvashi Chhatbar, Manan Thakar * |
+| Team Lead | vivek sarvaiya  |
+| Members | Devanshi Sakariya , Urvashi Chhatbar, Manan Thakar  |
 
 > Replace the bracketed contact/team information before final submission.
 
