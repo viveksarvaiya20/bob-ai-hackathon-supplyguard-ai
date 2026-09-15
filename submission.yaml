@@ -1,0 +1,31 @@
+# IBM Bob AI Hackathon submission metadata
+# Replace the placeholder values below before final submission.
+
+repository:
+  name: bob-ai-hackathon-supplyguard-ai
+  description: "SupplyGuard AI - AI-powered supply chain risk monitoring, disruption analysis, and logistics optimization."
+  github_url: "https://github.com/<YOUR_GITHUB_USERNAME>/bob-ai-hackathon-supplyguard-ai"
+
+project:
+  name: "SupplyGuard AI"
+  category: "AI / Supply Chain / Logistics"
+  technologies:
+    - "Python"
+    - "Flask"
+    - "HTML/CSS/JavaScript"
+    - "IBM watsonx.ai"
+    - "IBM Cloudant"
+  ai_capabilities:
+    - "Supply chain risk analysis"
+    - "Disruption assessment"
+    - "AI-assisted logistics insights"
+    - "Shipment/fleet monitoring"
+
+team:
+  members:
+    - name: "<YOUR NAME>"
+      email: "<YOUR EMAIL>"
+
+links:
+  demo_video: "<YOUR PUBLIC DEMO VIDEO URL>"
+  live_demo: "<YOUR LIVE DEMO URL OR N/A>"
