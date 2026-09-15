@@ -10,8 +10,8 @@
 |---|---|
 | Team Name | **SmartLogi AI** |
 | Track | **AI** |
-| Team Lead | **Krima Gondaliya — [add your email]** |
-| Members | **[add team members]** |
+| Team Lead | **vivek sarvaiya ** |
+| Members | **Devanshi Sakariya , Urvashi Chhatbar, Manan Thakar * |
 
 > Replace the bracketed contact/team information before final submission.
 
